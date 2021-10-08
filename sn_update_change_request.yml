@@ -1,0 +1,10 @@
+- name: Update ServiceNow Change Request
+  hosts: all
+  tasks:
+    - name: Updating ServiceNow Change Request
+      debug:
+        msg: "Updating ServiceNow Change Request..."
+
+    - pause:
+        seconds: 18
+        prompt: "ServiceNow Change Request was UPDATED successfully!"

@@ -1,4 +1,4 @@
-- name: Creating ServiceNow Change Request
+- name: Create ServiceNow Change Request
   hosts: all
   tasks:
     - name: Creating ServiceNow Change Request
@@ -7,4 +7,4 @@
 
     - pause:
         seconds: 18
-        prompt: "ServiceNow Change Request was created"
+        prompt: "ServiceNow Change Request was CREATED successfully!"
