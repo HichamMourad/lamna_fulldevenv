@@ -1,0 +1,10 @@
+- name: Configure Azure Database Services
+  hosts: all
+  tasks:
+    - name: Configure Azure Database Services
+      debug:
+        msg: "Configuring Azure Database Services..."
+
+    - pause:
+        seconds: 13
+        prompt: "Azure Database Services configuration is complete!"

@@ -1,0 +1,10 @@
+- name: Deploy Azure Database Services
+  hosts: all
+  tasks:
+    - name: Deploy Azure Database Services
+      debug:
+        msg: "Deploying Azure Database Services..."
+
+    - pause:
+        seconds: 23
+        prompt: "Azure Database Services deployment is complete!"

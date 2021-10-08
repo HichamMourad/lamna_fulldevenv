@@ -1,0 +1,10 @@
+- name: Configuration management for Lamna Windows servers
+  hosts: all
+  tasks:
+    - name: Configuration management for Lamna Windows servers
+      debug:
+        msg: "Configuring the Windows servers with Lamna Standards for Windows Servers..."
+
+    - pause:
+        seconds: 43
+        prompt: "Windows Servers configuration complete!"

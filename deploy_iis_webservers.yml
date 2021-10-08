@@ -1,0 +1,10 @@
+- name: Deploy IIS Web Servers
+  hosts: all
+  tasks:
+    - name: Deploy IIS Web Servers
+      debug:
+        msg: "Deploying IIS Web Servers..."
+
+    - pause:
+        seconds: 39
+        prompt: "IIS Web Servers deployment is complete!"

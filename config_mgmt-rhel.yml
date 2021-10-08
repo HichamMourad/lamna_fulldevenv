@@ -1,0 +1,10 @@
+- name: Configuration management for Lamna RHEL servers
+  hosts: all
+  tasks:
+    - name: Configuration management for Lamna RHEL servers
+      debug:
+        msg: "Configuring the RHEL servers with Lamna Standards for RHEL Servers..."
+
+    - pause:
+        seconds: 43
+        prompt: "RHEL Servers configuration complete!"
