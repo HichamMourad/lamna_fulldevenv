@@ -5,6 +5,6 @@
       debug:
         msg: "Creating ServiceNow Change Request..."
 
-- pause:
-    seconds: 18
-    prompt: "ServiceNow Change Request was created"
+    - pause:
+        seconds: 18
+        prompt: "ServiceNow Change Request was created"
