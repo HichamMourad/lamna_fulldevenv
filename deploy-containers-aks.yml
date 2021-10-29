@@ -1,0 +1,10 @@
+- name: Deploy Containers (Lamna HC - Application) to AKS
+  hosts: all
+  tasks:
+    - name: Deploy Containers (Lamna HC - Application) to AKS
+      debug:
+        msg: "Deploy Containers (Lamna HC - Application) to AKS..."
+
+    - pause:
+        seconds: 18
+        prompt: "Deploy Containers (Lamna HC - Application) to AKS has COMPLETED successfully!"
