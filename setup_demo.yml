@@ -23,7 +23,7 @@
         organization: "Default"
         inventory: "Demo Inventory"
         project: "LAMNA HealthCare Project"
-        playbook: "project/{{ item.playbook }}"
+        playbook: "{{ item.playbook }}"
         credentials:
           - "This AAPs Credentials controller.aapmerzlmeth7jle.az.ansiblecloud.com"
         state: "present"
