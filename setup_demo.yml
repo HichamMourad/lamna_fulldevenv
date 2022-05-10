@@ -161,31 +161,31 @@
           related:
             success_nodes:
               - identifier: "L Notify MS Teams"
-              - identifier: "Update SN Change Request"
             failure_nodes: []
             always_nodes: []
             credentials: []
 
-        # - identifier: "Update SN Change Request"
-        #   unified_job_template:
-        #     name: "Update SN Change Request"
-        #     organization:
-        #       name: "Default"
-        #     type: job_template
-        #   related:
-        #     success_nodes: []
-        #     failure_nodes: []
-        #     always_nodes: []
-        #     credentials: []
+        - identifier: "Update SN Change Request"
+          unified_job_template:
+            name: "Update SN Change Request"
+            organization:
+              name: "Default"
+            type: job_template
+          related:
+            success_nodes: []
+            failure_nodes: []
+            always_nodes: []
+            credentials: []
 
-        # - identifier: "L Notify MS Teams"
-        #   unified_job_template:
-        #     name: "L Notify MS Teams"
-        #     organization:
-        #       name: "Default"
-        #     type: job_template
-        #   related:
-        #     success_nodes: []
-        #     failure_nodes: []
-        #     always_nodes: []
-        #     credentials: []
+        - identifier: "L Notify MS Teams"
+          unified_job_template:
+            name: "L Notify MS Teams"
+            organization:
+              name: "Default"
+            type: job_template
+          related:
+            success_nodes:
+              - identifier: "Update SN Change Request"
+            failure_nodes: []
+            always_nodes: []
+            credentials: []
