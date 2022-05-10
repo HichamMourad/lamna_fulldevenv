@@ -172,8 +172,9 @@
               name: "Default"
             type: job_template
           related:
-            success_nodes:
-              - identifier: "Update SN Change Request"
+            success_nodes: []
+#              - identifier: "Update SN Change Request"
             failure_nodes: []
-            always_nodes: []
+            always_nodes:
+              - identifier: "Update SN Change Request"
             credentials: []
