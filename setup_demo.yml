@@ -32,7 +32,7 @@
         - { playbook: 'deploy_azure_dbsvcs.yml', name: 'L Deploy Azure DB Services' }
         - { playbook: 'config_mgmt-rhel.yml', name: 'L Config MGMT for RHEL' }
         - { playbook: 'spin_up_rhel8.yml', name: 'L Deploy RHEL Servers' }
-        - { playbook: 'spin_up_rhel8.yml', name: 'L Deploy Windows Servers' }
+        - { playbook: 'spin_up_windows2022.yml', name: 'L Deploy Windows Servers' }
         - { playbook: 'config_mgmt-windows.yml', name: 'L Config MGMT Windows Servers' }
         - { playbook: 'deploy-containers-aks.yml', name: 'L Deploy AKS Containers' }        
         - { playbook: 'deploy_iis_webservers.yml', name: 'L Deploy IIS Web Servers' }
