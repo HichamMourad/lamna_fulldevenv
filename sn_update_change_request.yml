@@ -1,5 +1,5 @@
 - name: Update ServiceNow Change Request
-  hosts: all
+  hosts: localhost
   tasks:
     - name: Updating ServiceNow Change Request
       debug:
