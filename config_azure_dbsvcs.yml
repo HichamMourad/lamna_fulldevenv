@@ -1,5 +1,5 @@
 - name: Configure Azure Database Services
-  hosts: all
+  hosts: localhost
   tasks:
     - name: Configure Azure Database Services
       debug:
