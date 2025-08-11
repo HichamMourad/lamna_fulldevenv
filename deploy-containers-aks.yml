@@ -1,5 +1,5 @@
 - name: Deploy Containers (Lamna HC - Application) to AKS
-  hosts: all
+  hosts: localhost
   tasks:
     - name: Deploy Containers (Lamna HC - Application) to AKS
       debug:
