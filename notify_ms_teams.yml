@@ -1,10 +1,10 @@
 - name: Notify Developers via MS Teams
-  hosts: all
+  hosts: localhost
   tasks:
     - name: Notify Developers via MS Teams
       debug:
         msg: "Notifying Developers via MS Teams..."
 
     - pause:
-        seconds: 39
+        seconds: 19
         prompt: "Develpers have been notified via MS Teams that the Dev environment is ready!"
