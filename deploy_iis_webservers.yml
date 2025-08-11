@@ -1,10 +1,10 @@
 - name: Deploy IIS Web Servers
-  hosts: all
+  hosts: localhost
   tasks:
     - name: Deploy IIS Web Servers
       debug:
         msg: "Deploying IIS Web Servers..."
 
     - pause:
-        seconds: 39
+        seconds: 9
         prompt: "IIS Web Servers deployment is complete!"
