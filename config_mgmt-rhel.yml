@@ -1,5 +1,5 @@
 - name: Configuration management for Lamna RHEL servers
-  hosts: all
+  hosts: localhost
   tasks:
     - name: Configuration management for Lamna RHEL servers
       debug:
