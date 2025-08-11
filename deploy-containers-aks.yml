@@ -6,5 +6,5 @@
         msg: "Deploy Containers (Lamna HC - Application) to AKS..."
 
     - pause:
-        seconds: 18
+        seconds: 5
         prompt: "Deploy Containers (Lamna HC - Application) to AKS has COMPLETED successfully!"
