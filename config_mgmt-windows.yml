@@ -1,10 +1,12 @@
+---
 - name: Configuration management for Lamna Windows servers
   hosts: localhost
   tasks:
     - name: Configuration management for Lamna Windows servers
-      debug:
+      ansible.builtin.debug:
         msg: "Configuring the Windows servers with Lamna Standards for Windows Servers..."
 
-    - pause:
+    - name: Waiting
+      ansible.builtin.pause:
         seconds: 43
         prompt: "Windows Servers configuration complete!"

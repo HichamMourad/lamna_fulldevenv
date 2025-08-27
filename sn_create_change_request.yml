@@ -1,10 +1,12 @@
+---
 - name: Create ServiceNow Change Request
   hosts: localhost
   tasks:
     - name: Creating ServiceNow Change Request
-      debug:
+      ansible.builtin.debug:
         msg: "Creating ServiceNow Change Request..."
 
-    - pause:
+    - name: Waiting
+      ansible.builtin.pause:
         seconds: 18
         prompt: "ServiceNow Change Request was CREATED successfully!"

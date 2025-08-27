@@ -1,10 +1,12 @@
+---
 - name: Update ServiceNow Change Request
   hosts: localhost
   tasks:
     - name: Updating ServiceNow Change Request
-      debug:
+      ansible.builtin.debug:
         msg: "Updating ServiceNow Change Request..."
 
-    - pause:
+    - name: Waiting
+      ansible.builtin.pause:
         seconds: 18
         prompt: "ServiceNow Change Request was UPDATED successfully!"

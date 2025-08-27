@@ -1,0 +1,21 @@
+---
+- name: New AWS Provisioning Workflow
+  hosts: localhost
+  tasks:
+    - name: Deploy the PostgreSQL DB
+      ansible.builtin.debug:
+        msg: |
+          Deploying the PostgreSQL DB with Lamna Standards to RHEL Server
+          ...
+          PostgreSQL DB deployed successfully to RHEL Server
+
+    - name: Waiting for complettion
+      ansible.builtin.pause:
+        seconds: 5
+
+    - name: Apply the PostgreSQL DB settings
+      ansible.builtin.debug:
+        msg: |
+          Applying the PostgreSQL DB settings
+          ...
+          Settings applied successfully to the PostgreSQL DB

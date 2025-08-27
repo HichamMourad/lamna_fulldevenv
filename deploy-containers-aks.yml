@@ -1,10 +1,12 @@
+---
 - name: Deploy Containers (Lamna HC - Application) to AKS
   hosts: localhost
   tasks:
     - name: Deploy Containers (Lamna HC - Application) to AKS
-      debug:
+      ansible.builtin.debug:
         msg: "Deploy Containers (Lamna HC - Application) to AKS..."
 
-    - pause:
+    - name: Waiting
+      ansible.builtin.pause:
         seconds: 5
         prompt: "Deploy Containers (Lamna HC - Application) to AKS has COMPLETED successfully!"

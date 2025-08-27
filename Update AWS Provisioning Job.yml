@@ -1,0 +1,31 @@
+---
+- name: Update AWS Provisioning Job
+  hosts: localhost
+  tasks:
+    - name: Update the firewall rules on the RHEL server
+      ansible.builtin.debug:
+        msg: |
+          Updating the firewall rules on the RHEL server
+
+    - name: Waiting for complettion
+      ansible.builtin.pause:
+        seconds: 3
+
+    - name: Update the firewall rules on the RHEL server... complete
+      ansible.builtin.debug:
+        msg: |
+          Firewall rules on the RHEL server are updated successfully
+# ----------------------------------------
+    - name: Restart the Firewall service on the RHEL server
+      ansible.builtin.debug:
+        msg: |
+          Restarting the Firewall service on the RHEL server
+
+    - name: Waiting for complettion
+      ansible.builtin.pause:
+        seconds: 3
+
+    - name: Restart the firewall service... complete
+      ansible.builtin.debug:
+        msg: |
+          The Firewall service has been restarted successfully

@@ -1,10 +1,12 @@
+---
 - name: Deploy Azure Database Services
   hosts: localhost
   tasks:
     - name: Deploy Azure Database Services
-      debug:
+      ansible.builtin.debug:
         msg: "Deploying Azure Database Services..."
 
-    - pause:
+    - name: Waiting
+      ansible.builtin.pause:
         seconds: 23
         prompt: "Azure Database Services deployment is complete!"
