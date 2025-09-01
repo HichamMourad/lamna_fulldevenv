@@ -38,4 +38,5 @@
     - name: Pause for 3 seconds silently
       ansible.builtin.pause:
         seconds: 3
-        echo: no
+        echo: false
+      no_log: true
