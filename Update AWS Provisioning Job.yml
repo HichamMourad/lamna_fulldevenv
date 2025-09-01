@@ -11,6 +11,7 @@
       ansible.builtin.pause:
         seconds: 3
         prompt: ""
+        echo: false
 
     - name: Update the firewall rules on the RHEL server...complete
       ansible.builtin.debug:
@@ -28,6 +29,7 @@
       ansible.builtin.pause:
         seconds: 3
         prompt: ""
+        echo: false
 
     - name: Restart the firewall service... complete
       ansible.builtin.debug:
