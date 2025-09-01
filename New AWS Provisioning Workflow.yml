@@ -10,6 +10,7 @@
     - name: Waiting for completion
       ansible.builtin.pause:
         seconds: 3
+        prompt: ""
 
     - name: Deploy the PostgreSQL DB...complete
       ansible.builtin.debug:
@@ -26,6 +27,7 @@
     - name: Waiting for complettion
       ansible.builtin.pause:
         seconds: 3
+        prompt: ""
 
     - name: Apply the PostgreSQL DB settings...complete
       ansible.builtin.debug:

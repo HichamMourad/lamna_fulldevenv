@@ -10,6 +10,7 @@
     - name: Waiting for complettion
       ansible.builtin.pause:
         seconds: 3
+        prompt: ""
 
     - name: Update the firewall rules on the RHEL server...complete
       ansible.builtin.debug:
@@ -26,6 +27,7 @@
     - name: Waiting for completion
       ansible.builtin.pause:
         seconds: 3
+        prompt: ""
 
     - name: Restart the firewall service... complete
       ansible.builtin.debug:
