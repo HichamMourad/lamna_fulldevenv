@@ -8,11 +8,10 @@
         msg: |
           Deploying the PostgreSQL DB with Lamna Standards to RHEL Server
 
-    - name: Waiting for completion-bad1
+    - name: Waiting for DB Deploy to complete
+      ansible.builtin.command: sleep 3
+      changed_when: false
       no_log: true
-      ansible.builtin.pause:
-        seconds: 3
-        prompt: ""
 
     - name: Deploy the PostgreSQL DB...complete
       ansible.builtin.debug:
@@ -26,17 +25,10 @@
         msg: |
           Applying the PostgreSQL DB settings
 
-    - name: Waiting for completion-bad2
-      no_log: true
-      ansible.builtin.pause:
-        seconds: 3
-        prompt: ""
-
-    - name: Waiting for completion
+    - name: Waiting for DB settings to complete
       ansible.builtin.command: sleep 3
       changed_when: false
       no_log: true
-
 
     - name: Apply the PostgreSQL DB settings...complete
       ansible.builtin.debug:

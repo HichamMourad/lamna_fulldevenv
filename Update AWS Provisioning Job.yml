@@ -8,11 +8,10 @@
         msg: |
           Updating the firewall rules on the RHEL server
 
-    - name: Waiting for complettion
+    - name: Waiting for firewall rule updates to complete
+      ansible.builtin.command: sleep 3
+      changed_when: false
       no_log: true
-      ansible.builtin.pause:
-        seconds: 3
-        prompt: ""
 
     - name: Update the firewall rules on the RHEL server...complete
       ansible.builtin.debug:
@@ -26,11 +25,10 @@
         msg: |
           Restarting the Firewall service on the RHEL server
 
-    - name: Waiting for completion
+    - name: Waiting for firewall service restart to complete
+      ansible.builtin.command: sleep 3
+      changed_when: false
       no_log: true
-      ansible.builtin.pause:
-        seconds: 3
-        prompt: ""
 
     - name: Restart the firewall service... complete
       ansible.builtin.debug:
