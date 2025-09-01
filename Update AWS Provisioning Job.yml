@@ -11,17 +11,19 @@
       ansible.builtin.pause:
         seconds: 3
 
-    - name: Update the firewall rules on the RHEL server... complete
+    - name: Update the firewall rules on the RHEL server...complete
       ansible.builtin.debug:
         msg: |
           Firewall rules on the RHEL server are updated successfully
+
 # ----------------------------------------
+
     - name: Restart the Firewall service on the RHEL server
       ansible.builtin.debug:
         msg: |
           Restarting the Firewall service on the RHEL server
 
-    - name: Waiting for complettion
+    - name: Waiting for completion
       ansible.builtin.pause:
         seconds: 3
 

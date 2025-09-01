@@ -6,16 +6,28 @@
       ansible.builtin.debug:
         msg: |
           Deploying the PostgreSQL DB with Lamna Standards to RHEL Server
-          ...
-          PostgreSQL DB deployed successfully to RHEL Server
 
-    - name: Waiting for complettion
+    - name: Waiting for completion
       ansible.builtin.pause:
-        seconds: 5
+        seconds: 3
+
+    - name: Deploy the PostgreSQL DB...complete
+      ansible.builtin.debug:
+        msg: |
+          Deploying the PostgreSQL DB with Lamna Standards to RHEL Server...completed
+
+# ----------------------------------------
 
     - name: Apply the PostgreSQL DB settings
       ansible.builtin.debug:
         msg: |
           Applying the PostgreSQL DB settings
-          ...
+
+    - name: Waiting for complettion
+      ansible.builtin.pause:
+        seconds: 3
+
+    - name: Apply the PostgreSQL DB settings...complete
+      ansible.builtin.debug:
+        msg: |
           Settings applied successfully to the PostgreSQL DB
