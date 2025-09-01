@@ -1,6 +1,7 @@
 ---
 - name: New AWS Provisioning Workflow
   hosts: localhost
+  gather_facts: false
   tasks:
     - name: Deploy the PostgreSQL DB
       ansible.builtin.debug:
@@ -12,6 +13,7 @@
         seconds: 3
         prompt: ""
         echo: false
+      no_log: true
 
     - name: Deploy the PostgreSQL DB...complete
       ansible.builtin.debug:
@@ -30,6 +32,7 @@
         seconds: 3
         prompt: ""
         echo: false
+      no_log: true
 
     - name: Apply the PostgreSQL DB settings...complete
       ansible.builtin.debug:

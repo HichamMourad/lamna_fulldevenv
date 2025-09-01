@@ -1,6 +1,7 @@
 ---
 - name: Update AWS Provisioning Job
   hosts: localhost
+  gather_facts: false
   tasks:
     - name: Update the firewall rules on the RHEL server
       ansible.builtin.debug:
@@ -12,6 +13,7 @@
         seconds: 3
         prompt: ""
         echo: false
+      no_log: true
 
     - name: Update the firewall rules on the RHEL server...complete
       ansible.builtin.debug:
@@ -30,6 +32,7 @@
         seconds: 3
         prompt: ""
         echo: false
+        no_log: true
 
     - name: Restart the firewall service... complete
       ansible.builtin.debug:
