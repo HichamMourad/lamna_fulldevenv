@@ -34,3 +34,8 @@
       ansible.builtin.debug:
         msg: |
           Settings applied successfully to the PostgreSQL DB
+
+    - name: Pause for 3 seconds silently
+      ansible.builtin.pause:
+        seconds: 3
+        echo: no
