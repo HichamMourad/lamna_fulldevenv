@@ -1,0 +1,7 @@
+---
+- name: Respond to webhook
+  hosts: localhost
+  tasks:
+    - name: Hello there
+      ansible.builtin.debug:
+        msg: "Webhook received! Message: {{ event.payload.message }}"
