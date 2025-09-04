@@ -4,4 +4,4 @@
   tasks:
     - name: Hello there
       ansible.builtin.debug:
-        msg: "Webhook received! Message: {{ incoming_message }}"
+        msg: "Webhook received, thank you."
