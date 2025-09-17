@@ -1,14 +1,13 @@
 ---
 - name: Install and configure firewalld on RHEL
-  hosts: " {{ ahost | default('all') }} "  # This will be overridden by the AAP inventory
+  hosts: " {{ ansible_eda.event.payload.limit | default('all') }} "  # This will be overridden by the AAP inventory
   become: true # Use privilege escalation (sudo) to run the tasks
 
   tasks:
 
     - name: Debug to print the hostname
       ansible.builtin.debug:
-        msg: "Configuring host: {{ ahost }}"
-
+        msg: "Configuring host: {{ ansible_eda.event.payload.limit }}"
 
     - name: Wait for sshd on port 22
       ansible.builtin.wait_for:
