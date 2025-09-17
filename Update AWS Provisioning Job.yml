@@ -1,6 +1,6 @@
 ---
 - name: Install and configure firewalld on RHEL
-  hosts: "{{ ansible_host | default(inventory_hostname) }}"  # This will be overridden by the AAP inventory
+  hosts: "{{ ansible_host }}"  # This will be overridden by the AAP inventory
   become: true # Use privilege escalation (sudo) to run the tasks
 
   tasks:
