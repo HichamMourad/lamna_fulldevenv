@@ -1,6 +1,6 @@
 ---
 - name: Install and configure firewalld on RHEL
-  hosts: all  # This will be overridden by the AAP inventory
+  hosts: localhost  # This will be overridden by the AAP inventory
   become: true # Use privilege escalation (sudo) to run the tasks
 
   tasks:
