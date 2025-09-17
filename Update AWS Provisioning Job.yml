@@ -16,6 +16,12 @@
         name: firewalld
         state: present
 
+    - name: Ensure firewalld service is running and enabled (RHEL)
+      ansible.builtin.service:
+        name: firewalld
+        state: started
+        enabled: true
+
     - name: Configure firewalld
       ansible.posix.firewalld:
         service: "{{ item }}"
@@ -26,8 +32,8 @@
         - http
         - https
 
-    - name: Ensure firewalld service is running and enabled (RHEL)
+    - name: Restart the firewalld service
       ansible.builtin.service:
         name: firewalld
-        state: started
+        state: restarted
         enabled: true
