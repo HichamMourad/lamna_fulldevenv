@@ -5,10 +5,6 @@
 
   tasks:
 
-    - name: Debug to print the hostname
-      ansible.builtin.debug:
-        msg: "Configuring host: {{ ansible_eda.event.payload.limit }}"
-
     - name: Wait for sshd on port 22
       ansible.builtin.wait_for:
         host: "{{ inventory_hostname }}"
