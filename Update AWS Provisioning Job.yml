@@ -1,8 +1,9 @@
 ---
 - name: Install and configure firewalld on RHEL
-  hosts: "{{ target_hosts }}"  # This will be overridden by the AAP inventory
+  hosts: host  # This will be overridden by the AAP inventory
   become: true # Use privilege escalation (sudo) to run the tasks
-
+  vars:
+    host: "{{ target_hosts }}"
   tasks:
 
     - name: Ensure sudo and Python are installed (RHEL)
