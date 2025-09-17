@@ -7,7 +7,7 @@
 
     - name: Wait for sshd on port 22
       ansible.builtin.wait_for:
-        host: "{{ ansible_host | default(inventory_hostname) }}"
+        host: "{{ inventory_hostname }}"
         port: 22
         state: started
         timeout: 300
