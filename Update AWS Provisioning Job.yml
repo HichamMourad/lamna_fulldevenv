@@ -1,36 +1,26 @@
 ---
-- name: Update AWS Provisioning Job
-  hosts: localhost
-  gather_facts: false
+- name: Install and configure firewalld on RHEL
+  hosts: all  # This will be overridden by the AAP inventory
+  become: true # Use privilege escalation (sudo) to run the tasks
+
   tasks:
-    - name: Update the firewall rules on the RHEL server
-      ansible.builtin.debug:
-        msg: |
-          Updating the firewall rules on the RHEL server
+    - name: Ensure firewalld is installed (RHEL)
+      ansible.builtin.dnf:
+        name: firewalld
+        state: present
 
-    - name: Waiting for firewall rule updates to complete
-      ansible.builtin.command: sleep 3
-      changed_when: false
-      no_log: true
+    - name: Configure firewalld
+      ansible.posix.firewalld:
+        service: "{{ item }}"
+        permanent: true
+        state: enabled
+        immediate: true
+      loop:
+        - http
+        - https
 
-    - name: Update the firewall rules on the RHEL server...complete
-      ansible.builtin.debug:
-        msg: |
-          Firewall rules on the RHEL server are updated successfully
-
-# ----------------------------------------
-
-    - name: Restart the Firewall service on the RHEL server
-      ansible.builtin.debug:
-        msg: |
-          Restarting the Firewall service on the RHEL server
-
-    - name: Waiting for firewall service restart to complete
-      ansible.builtin.command: sleep 3
-      changed_when: false
-      no_log: true
-
-    - name: Restart the firewall service... complete
-      ansible.builtin.debug:
-        msg: |
-          The Firewall service has been restarted successfully
+    - name: Ensure firewalld service is running and enabled (RHEL)
+      ansible.builtin.service:
+        name: firewalld
+        state: started
+        enabled: true
