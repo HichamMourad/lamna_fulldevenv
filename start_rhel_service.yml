@@ -6,7 +6,12 @@
       ansible.builtin.debug:
         msg: "Starting the RHEL service..."
 
-    - name: Waiting
+    - name: Waiting for RHEL service to be started
       ansible.builtin.pause:
         seconds: 3
-        prompt: "RHEL service starting is complete!"
+      changed_when: false
+      no_log: true
+
+    - name: Status of the RHEL service starting
+      ansible.builtin.debug:
+        msg: "RHEL service starting is completed successfully!"

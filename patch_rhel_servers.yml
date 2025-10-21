@@ -6,7 +6,12 @@
       ansible.builtin.debug:
         msg: "Patching the RHEL servers..."
 
-    - name: Waiting
+    - name: Waiting for RHEL servers to be patched
       ansible.builtin.pause:
         seconds: 3
-        prompt: "RHEL Servers patching is complete!"
+      changed_when: false
+      no_log: true
+
+    - name: Status of the RHEL servers patching
+      ansible.builtin.debug:
+        msg: "RHEL servers patching is complete successfully!"

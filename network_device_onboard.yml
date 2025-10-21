@@ -6,7 +6,12 @@
       ansible.builtin.debug:
         msg: "Onboarding the network device..."
 
-    - name: Waiting
+    - name: Waiting for network device onboarding to complete
       ansible.builtin.pause:
         seconds: 3
-        prompt: "Network device onboarding is complete!"
+      changed_when: false
+      no_log: true
+
+    - name: Status of the network device onboarding
+      ansible.builtin.debug:
+        msg: "Network device onboarding is complete successfully!"

@@ -6,7 +6,12 @@
       ansible.builtin.debug:
         msg: "Deploying the application to the RHEL servers..."
 
-    - name: Waiting
+    - name: Waiting for application to be deployed
       ansible.builtin.pause:
         seconds: 3
-        prompt: "Application deployment to the RHEL servers is complete!"
+      changed_when: false
+      no_log: true
+
+    - name: Status of the application deployment
+      ansible.builtin.debug:
+        msg: "Application deployment to the RHEL servers is complete successfully!"

@@ -6,7 +6,12 @@
       ansible.builtin.debug:
         msg: "Deploying the RHEL 9 servers with Lamna Standards for RHEL 9 Servers..."
 
-    - name: Waiting
+    - name: Waiting for RHEL 9 servers to be deployed
       ansible.builtin.pause:
         seconds: 3
-        prompt: "RHEL 9 Servers deployment is complete!"
+      changed_when: false
+      no_log: true
+
+    - name: Status of the RHEL 9 servers
+      ansible.builtin.debug:
+        msg: "RHEL 9 Servers deployment is complete!"

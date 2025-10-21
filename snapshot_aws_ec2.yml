@@ -6,7 +6,12 @@
       ansible.builtin.debug:
         msg: "Snapshotting the AWS EC2 instance..."
 
-    - name: Waiting
+    - name: Waiting for AWS EC2 instance to be snapped
       ansible.builtin.pause:
         seconds: 23
-        prompt: "AWS EC2 instance snapshot is complete!"
+      changed_when: false
+      no_log: true
+
+    - name: Status of the AWS EC2 instance snapshot
+      ansible.builtin.debug:
+        msg: "AWS EC2 instance snapshot is complete successfully!"

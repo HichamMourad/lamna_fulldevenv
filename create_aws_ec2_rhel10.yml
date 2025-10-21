@@ -6,7 +6,12 @@
       ansible.builtin.debug:
         msg: "Deploying the RHEL 10 servers with Lamna Standards for RHEL 10 Servers..."
 
-    - name: Waiting
+    - name: Waiting for RHEL 10 servers to be deployed
       ansible.builtin.pause:
         seconds: 3
-        prompt: "RHEL 10 Servers deployment is complete!"
+      changed_when: false
+      no_log: true
+
+    - name: Status of the RHEL 10 servers
+      ansible.builtin.debug:
+        msg: "RHEL 10 Servers deployment is complete!"

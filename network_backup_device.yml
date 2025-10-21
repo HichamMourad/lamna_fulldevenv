@@ -6,7 +6,12 @@
       ansible.builtin.debug:
         msg: "Backing up the network device..."
 
-    - name: Waiting
+    - name: Waiting for network device backup to complete
       ansible.builtin.pause:
         seconds: 3
-        prompt: "Network device backup is complete!"
+      changed_when: false
+      no_log: true
+
+    - name: Status of the network device backup
+      ansible.builtin.debug:
+        msg: "Network device backup is complete successfully!"
