@@ -1,0 +1,12 @@
+---
+- name: Onboard the network device
+  hosts: localhost
+  tasks:
+    - name: Onboard the network device
+      ansible.builtin.debug:
+        msg: "Onboarding the network device..."
+
+    - name: Waiting
+      ansible.builtin.pause:
+        seconds: 3
+        prompt: "Network device onboarding is complete!"
