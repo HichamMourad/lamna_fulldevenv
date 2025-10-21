@@ -1,0 +1,12 @@
+---
+- name: Snapshot the AWS EC2 instances
+  hosts: localhost
+  tasks:
+    - name: Snapshot the AWS EC2 instance
+      ansible.builtin.debug:
+        msg: "Snapshotting the AWS EC2 instance..."
+
+    - name: Waiting
+      ansible.builtin.pause:
+        seconds: 23
+        prompt: "AWS EC2 instance snapshot is complete!"

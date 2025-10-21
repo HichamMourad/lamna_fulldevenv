@@ -1,0 +1,12 @@
+---
+- name: Deploy the application to the RHEL servers
+  hosts: localhost
+  tasks:
+    - name: Deploy the application to the RHEL servers
+      ansible.builtin.debug:
+        msg: "Deploying the application to the RHEL servers..."
+
+    - name: Waiting
+      ansible.builtin.pause:
+        seconds: 3
+        prompt: "Application deployment to the RHEL servers is complete!"

@@ -1,0 +1,12 @@
+---
+- name: Backup the network device
+  hosts: localhost
+  tasks:
+    - name: Backup the network device
+      ansible.builtin.debug:
+        msg: "Backing up the network device..."
+
+    - name: Waiting
+      ansible.builtin.pause:
+        seconds: 3
+        prompt: "Network device backup is complete!"

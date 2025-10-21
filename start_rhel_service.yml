@@ -1,0 +1,12 @@
+---
+- name: Start the RHEL service
+  hosts: localhost
+  tasks:
+    - name: Start the RHEL service
+      ansible.builtin.debug:
+        msg: "Starting the RHEL service..."
+
+    - name: Waiting
+      ansible.builtin.pause:
+        seconds: 3
+        prompt: "RHEL service starting is complete!"

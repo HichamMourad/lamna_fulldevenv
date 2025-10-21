@@ -1,0 +1,12 @@
+---
+- name: Deploy the Lamna RHEL 10 servers
+  hosts: localhost
+  tasks:
+    - name: Deploy the Lamna RHEL 10 servers
+      ansible.builtin.debug:
+        msg: "Deploying the RHEL 10 servers with Lamna Standards for RHEL 10 Servers..."
+
+    - name: Waiting
+      ansible.builtin.pause:
+        seconds: 3
+        prompt: "RHEL 10 Servers deployment is complete!"
