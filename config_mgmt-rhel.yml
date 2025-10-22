@@ -1,12 +1,20 @@
 ---
 - name: Configuration management for Lamna RHEL servers
   hosts: localhost
+  vars:
+    ansible_deprecation_warnings: false
+    ansible_command_warnings: false
   tasks:
     - name: Configuration management for Lamna RHEL servers
       ansible.builtin.debug:
         msg: "Configuring the RHEL servers with Lamna Standards for RHEL Servers..."
 
-    - name: Waiting
+    - name: Waiting for RHEL servers configuration to be completed
       ansible.builtin.pause:
-        seconds: 43
-        prompt: "RHEL Servers configuration complete!"
+        seconds: 3
+      changed_when: false
+      no_log: true
+
+    - name: Status of the RHEL servers configuration completion
+      ansible.builtin.debug:
+        msg: "RHEL servers configuration is complete successfully!"

@@ -2,6 +2,9 @@
 - name: New AWS Provisioning Workflow
   hosts: localhost
   gather_facts: false
+  vars:
+    ansible_deprecation_warnings: false
+    ansible_command_warnings: false
   tasks:
     - name: Deploy the PostgreSQL DB
       ansible.builtin.debug:

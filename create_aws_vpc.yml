@@ -2,6 +2,9 @@
 - name: Create AWS VPC
   hosts: localhost
   gather_facts: false
+  vars:
+    ansible_deprecation_warnings: false
+    ansible_command_warnings: false
   tasks:
     - name: Create the AWS VPC
       ansible.builtin.debug:

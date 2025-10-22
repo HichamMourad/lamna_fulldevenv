@@ -1,6 +1,9 @@
 ---
 - name: Configure Azure Database Services
   hosts: localhost
+  vars:
+    ansible_deprecation_warnings: false
+    ansible_command_warnings: false
   tasks:
     - name: Configure Azure Database Services
       ansible.builtin.debug:
@@ -8,5 +11,10 @@
 
     - name: Waiting
       ansible.builtin.pause:
-        seconds: 13
-        prompt: "Azure Database Services configuration is complete!"
+        seconds: 3
+      changed_when: false
+      no_log: true
+
+    - name: Status of the Azure Database Services configuration completion
+      ansible.builtin.debug:
+        msg: "Azure Database Services configuration is complete successfully!"

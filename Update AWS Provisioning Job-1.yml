@@ -2,6 +2,9 @@
 - name: Update AWS Provisioning Job
   hosts: localhost
   gather_facts: false
+  vars:
+    ansible_deprecation_warnings: false
+    ansible_command_warnings: false
   tasks:
     - name: Update the firewall rules on the RHEL server
       ansible.builtin.debug:

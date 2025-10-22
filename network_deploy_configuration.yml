@@ -1,6 +1,9 @@
 ---
 - name: Deploy the network configuration to the network device
   hosts: localhost
+  vars:
+    ansible_deprecation_warnings: false
+    ansible_command_warnings: false
   tasks:
     - name: Deploy the network configuration to the network device
       ansible.builtin.debug:

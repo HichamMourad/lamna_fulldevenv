@@ -1,6 +1,9 @@
 ---
 - name: Configuration management for Lamna Windows servers
   hosts: localhost
+  vars:
+    ansible_deprecation_warnings: false
+    ansible_command_warnings: false
   tasks:
     - name: Configuration management for Lamna Windows servers
       ansible.builtin.debug:
@@ -8,5 +11,10 @@
 
     - name: Waiting
       ansible.builtin.pause:
-        seconds: 43
-        prompt: "Windows Servers configuration complete!"
+        seconds: 3
+      changed_when: false
+      no_log: true
+
+    - name: Status of the Windows servers configuration completion
+      ansible.builtin.debug:
+        msg: "Windows servers configuration is complete successfully!"

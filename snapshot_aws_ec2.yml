@@ -1,6 +1,9 @@
 ---
 - name: Snapshot the AWS EC2 instances
   hosts: localhost
+  vars:
+    ansible_deprecation_warnings: false
+    ansible_command_warnings: false
   tasks:
     - name: Snapshot the AWS EC2 instance
       ansible.builtin.debug:

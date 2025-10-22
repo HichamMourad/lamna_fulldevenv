@@ -1,6 +1,9 @@
 ---
 - name: Deploy the Lamna Windows 2022 servers
   hosts: localhost
+  vars:
+    ansible_deprecation_warnings: false
+    ansible_command_warnings: false
   tasks:
     - name: Deploy the Lamna Windows 2022 servers
       ansible.builtin.debug:
@@ -8,5 +11,10 @@
 
     - name: Waiting
       ansible.builtin.pause:
-        seconds: 23
-        prompt: "Windows 2022 Servers deployment is complete!"
+        seconds: 5
+      changed_when: false
+      no_log: true
+
+    - name: Status of the Windows 2022 servers deployment completion
+      ansible.builtin.debug:
+        msg: "Windows 2022 servers deployment is complete successfully!"

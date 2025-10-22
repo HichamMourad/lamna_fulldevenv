@@ -1,6 +1,9 @@
 ---
 - name: Backup the network device
   hosts: localhost
+  vars:
+    ansible_deprecation_warnings: false
+    ansible_command_warnings: false
   tasks:
     - name: Backup the network device
       ansible.builtin.debug:
