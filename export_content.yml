@@ -1,0 +1,8 @@
+---
+- name: Export AAP content
+  hosts: localhost
+
+  tasks:
+    - name: Export all AAP content
+      ansible.controller.export:
+        all: true
