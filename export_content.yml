@@ -1,8 +1,20 @@
 ---
 - name: Export AAP content
   hosts: localhost
+  connection: local
+  gather_facts: false
 
   tasks:
-    - name: Export all AAP content
+    - name: Export all job templates
       ansible.controller.export:
-        all: true
+        job_templates: "all"
+      register: exported_data
+
+    - name: Save exported job templates to file
+      ansible.builtin.copy:
+        content: "{{ exported_data | to_nice_yaml }}"
+        dest: "/tmp/job_templates_export.yml"
+
+    - name: Display export summary
+      ansible.builtin.debug:
+        msg: "Exported {{ exported_data.assets.job_templates | length }} job templates"
